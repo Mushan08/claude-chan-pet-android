@@ -1,5 +1,8 @@
 # claude-chan-pet-android
 
+[![Android CI](https://github.com/Mushan08/claude-chan-pet-android/actions/workflows/android.yml/badge.svg)](https://github.com/Mushan08/claude-chan-pet-android/actions/workflows/android.yml)
+[下载 APK](https://github.com/Mushan08/claude-chan-pet-android/releases/latest)
+
 把 `claude-chan-pet` 从 Electron 桌面版移植到 Android：一只悬浮在所有应用上面的 Claude 娘，站在屏幕底部，可以拖、可以甩、会自己待机呼吸、会碎碎念，也会播抱玩偶 / 招手 / 比心 / 看书 / 想到办法五段透明动作。
 
 ![设置页](docs/screenshots/settings.png)

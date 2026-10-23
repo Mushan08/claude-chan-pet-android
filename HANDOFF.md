@@ -5,6 +5,9 @@
 2026-10-23：从 `E:\cc_workplace\claude-chan-pet`（Electron）移植到 Android，
 产物 `dist/claude-chan-pet-android-0.1.0.apk`（18.07 MB，debug 签名）。
 
+- GitHub：https://github.com/Mushan08/claude-chan-pet-android
+- Release：https://github.com/Mushan08/claude-chan-pet-android/releases/tag/v0.1.0
+
 已在 Android 15（API 35）x86_64 模拟器、1080×2400 / 420 dpi 上跑通：
 
 - 权限引导、悬浮窗、通知
