@@ -1,0 +1,70 @@
+{
+  "source": "claude-chan-pet/assets/pet/anims",
+  "clips": {
+    "hug": {
+      "file": "anims/hug.webp",
+      "w": 385,
+      "h": 480,
+      "frames": 97,
+      "fps": 24,
+      "seconds": 4.04,
+      "bytes": 3002854,
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    "wave": {
+      "file": "anims/wave.webp",
+      "w": 334,
+      "h": 480,
+      "frames": 97,
+      "fps": 24,
+      "seconds": 4.04,
+      "bytes": 2965480,
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    "love": {
+      "file": "anims/love.webp",
+      "w": 369,
+      "h": 480,
+      "frames": 97,
+      "fps": 24,
+      "seconds": 4.04,
+      "bytes": 3096746,
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    "read": {
+      "file": "anims/read.webp",
+      "w": 695,
+      "h": 480,
+      "frames": 97,
+      "fps": 24,
+      "seconds": 4.04,
+      "bytes": 4517242,
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    "think": {
+      "file": "anims/think.webp",
+      "w": 631,
+      "h": 480,
+      "frames": 97,
+      "fps": 24,
+      "seconds": 4.04,
+      "bytes": 3994648,
+      "alpha": [
+        0,
+        255
+      ]
+    }
+  }
+}

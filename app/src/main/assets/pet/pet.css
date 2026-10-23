@@ -1,0 +1,190 @@
+/* Claude 娘桌宠 · Android 渲染层
+   窗口本身由 PetService 通过 WindowManager 移动；这里只负责立绘、气泡和形变。 */
+
+:root {
+  --paper: #f6f3ed;
+  --ink: #2b2724;
+  --copper: #c8703c;
+  --copper-soft: #e0a179;
+  --pet-h: 160px;
+  --bubble-max: 224px;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+}
+
+#stage {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 2px;
+}
+
+/* ---------- 立绘 ---------- */
+
+#pet {
+  position: relative;
+  width: 100%;
+  transform-origin: 50% 100%;
+  will-change: transform;
+}
+
+#breathe {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transform-origin: 50% 100%;
+  animation: breathe 3.6s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: translateY(0) scale(1, 1);
+  }
+  50% {
+    transform: translateY(-1.8px) scale(0.997, 1.014);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #breathe {
+    animation: none;
+  }
+}
+
+#body {
+  display: block;
+  height: var(--pet-h);
+  width: auto;
+  max-width: 100%;
+  transform-origin: 50% 100%;
+  pointer-events: none;
+  transition: opacity 120ms linear;
+}
+
+#anim-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.anim {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: var(--pet-h);
+  width: auto;
+  max-width: calc(100vw - 6px);
+  object-fit: contain;
+  object-position: bottom center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 120ms linear;
+}
+
+.anim.show {
+  opacity: 1;
+}
+
+#pet.clip #body {
+  opacity: 0;
+}
+
+/* ---------- 气泡 ---------- */
+
+#bubble {
+  position: relative;
+  margin-bottom: 6px;
+  max-width: var(--bubble-max);
+  max-height: 68px;
+  padding: 5px 9px 5px 7px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--paper);
+  border: 1.5px solid var(--copper-soft);
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(43, 39, 36, 0.16);
+  color: var(--ink);
+  font-size: 12.5px;
+  line-height: 1.4;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 0.24s ease, transform 0.24s ease;
+  transform-origin: 50% 100%;
+}
+
+@media (max-width: 240px) {
+  #bubble {
+    max-width: calc(100vw - 12px);
+  }
+}
+
+#bubble.hidden {
+  opacity: 0;
+  transform: translateY(5px) scale(0.96);
+  pointer-events: none;
+}
+
+#bubble::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  background: var(--paper);
+  border-right: 1.5px solid var(--copper-soft);
+  border-bottom: 1.5px solid var(--copper-soft);
+  transform: rotate(45deg);
+}
+
+#bubble-face {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: var(--paper);
+}
+
+#bubble-face[hidden] {
+  display: none;
+}
+
+#bubble.face-only {
+  padding: 6px;
+  gap: 0;
+}
+
+#bubble.face-only #bubble-face {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+}
+
+#bubble-text {
+  flex: 1 1 auto;
+}

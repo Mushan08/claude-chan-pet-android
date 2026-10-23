@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Android 15 forces edge-to-edge for targetSdk 35. This app predates
+         inset-aware layouts, so opt out on 15+ instead of drawing under the
+         status bar. -->
+    <style name="AppTheme" parent="AppThemeBase">
+        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
+    </style>
+</resources>

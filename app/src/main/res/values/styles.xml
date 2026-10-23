@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppThemeBase" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">#C8703C</item>
+        <item name="android:statusBarColor">#F6F3ED</item>
+        <item name="android:navigationBarColor">#F6F3ED</item>
+        <item name="android:windowBackground">#F6F3ED</item>
+        <item name="android:windowActionModeOverlay">true</item>
+    </style>
+
+    <style name="AppTheme" parent="AppThemeBase" />
+
+    <style name="PetDialog" parent="android:Theme.Material.Light.Dialog.Alert">
+        <item name="android:colorAccent">#C8703C</item>
+        <item name="android:windowBackground">@drawable/bg_pet_dialog</item>
+        <item name="android:backgroundDimAmount">0.28</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowMinWidthMajor">70%</item>
+        <item name="android:windowMinWidthMinor">88%</item>
+    </style>
+</resources>

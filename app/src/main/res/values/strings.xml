@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Claude 娘桌宠</string>
+    <string name="notif_channel">桌宠悬浮窗</string>
+    <string name="notif_title">Claude 娘在桌面上</string>
+    <string name="notif_text">点一下打开设置</string>
+</resources>
